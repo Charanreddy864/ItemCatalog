@@ -28,6 +28,117 @@ body {
   z-index: 10;
 }
 
+.filter-select {
+  display: none;
+  padding: 10px 16px;
+  border: 2px solid #333;
+  border-radius: 999px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  max-width: 320px;
+}
+
+.filter-select:focus {
+  border-color: #666;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ── Custom Dropdown ── */
+.filter-dropdown-wrapper {
+  display: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.custom-dropdown-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 999px;
+  background: transparent;
+  color: #f0f0f0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.custom-dropdown-trigger:hover {
+  border-color: #666;
+}
+
+.custom-dropdown-arrow {
+  transition: transform 0.2s ease;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.custom-dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  overflow: hidden;
+  list-style: none;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.custom-dropdown-item {
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.custom-dropdown-item:hover {
+  background-color: #252525;
+  color: #fff;
+}
+
+.custom-dropdown-item.active {
+  color: #fff;
+  font-weight: 600;
+  background-color: #2a2a2a;
+}
+
+@media (max-width: 600px) {
+  .filter-dropdown-wrapper {
+    display: flex;
+  }
+  .filter-buttons {
+    display: none;
+  }
+}
+
 .filter-btn {
   padding: 8px 20px;
   border: 2px solid #333;
@@ -211,6 +322,13 @@ body {
   max-height: 460px;
   border-radius: 20px;
   margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .img-wrapper--details {
+    min-height: unset;
+    background-color: transparent;
+  }
 }
 
 .img-spinner {
